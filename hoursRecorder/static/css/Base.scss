@@ -1,0 +1,125 @@
+@import "colors","dimens","_mixins";
+//@import "node_modules/bootstrap/scss/bootstrap";
+
+@include font-face(BKoodak,'static/font/BKoodakBold',null,null,eot ttf woff);
+@include font-face(BYekan,'static/font/BYekan',null,null,eot ttf woff);
+
+$font-style: BKoodak,Byekan, sans-serif;
+
+body {
+  font: 100% $font-style;
+  color: $text-color;
+  direction: rtl;
+  font-size: $main-font-size;
+}
+
+.logo{
+  height: $logo-hieght;
+  width: $logo-width;
+  float: left;
+  display: block;
+}
+.float-right{
+  float: right;
+}
+.float-left{
+  float: left;
+}
+.navbar1{
+  height: 70px;
+  border: none;
+  margin: 0;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+  background-color: $darker-green;
+}
+a.navbar-brand{
+  font-size: $header-font-size;
+  color: $white;
+}
+div.list-group{
+  display: block;
+  position: relative;
+  width: 100%;
+  margin: 0;
+  border-top: none;
+}
+div.panel-heading.panel1{
+  background: $lighter-green;
+  float: right;
+  width: 25%;
+  height: 60px;
+  //color: $white;
+  //border: solid 0.5px;
+  text-align: center;
+  //border-top-color: $white;
+}
+div.panel-body.panel1{
+  position: absolute;
+  float: right;
+  top:20%;
+  background: $darker-green;
+  padding: 0;
+  width: 25%;
+  height: 80%;
+}
+div.panel.panel-default{
+  position: absolute;
+  padding: 0;
+  float: left;
+  right: 25%;
+  background: $lighter-green;
+  width: 75%;
+  height: 100%;
+}
+.list-group-item{
+  //border-bottom-left-radius: 1em;
+  //border-top-left-radius: 1em;
+}
+.list-group-item.active{
+  //border-bottom-left-radius: 1em;
+  //border-top-left-radius: 1em;
+  background-color: $light-green;
+  border: $text-color;
+}
+.list-group-item.active:hover{
+  background-color: $main-green;
+}
+.btn{
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 10%;
+  margin: 8% 0;
+  background-color: $main-orange;
+  bottom:0;
+}
+table.table.table-hover{
+  margin: 0;
+  padding: 0;
+}
+.table.table-hover thead{
+  color: $white;
+  text-align: center;
+  background-color: $darker-green;
+  margin: 0;
+  height: 60px;
+  padding: 0;
+  left: 20px;
+}
+thead.tr.th{
+  padding: 0 -10px;
+  text-align: center;
+}
+
+.input1{
+  display: block;
+  position: absolute;
+  width: 95%;
+  //height: 10%;
+  margin: 8% 5px;
+  bottom: 20px;
+  padding: 8px;
+  background:rgba(214, 64, 17, 0.2);
+  border: 0 solid #dbdbdb;
+}

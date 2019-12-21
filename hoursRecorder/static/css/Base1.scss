@@ -1,0 +1,98 @@
+@import "colors","dimens","_mixins";
+//@import "node_modules/bootstrap/scss/bootstrap";
+
+@include font-face(BKoodak,'static/font/BKoodakBold',null,null,eot ttf woff);
+@include font-face(BYekan,'static/font/BYekan',null,null,eot ttf woff);
+
+$font-style: BKoodak,Byekan, sans-serif;
+
+body {
+  font: 100% $font-style;
+  color: $text-color;
+  direction: rtl;
+  font-size: $main-font-size;
+}
+
+.logo{
+  height: $logo-hieght;
+  width: $logo-width;
+  float: left;
+  display: block;
+}
+.float-right{
+  float: right;
+}
+.float-left{
+  float: left;
+}
+.navbar1{
+  height: 20%;
+  border: none;
+  padding-top: 20px;
+  margin: 0;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+  background-color: $darker-blue;
+}
+a.navbar-brand{
+  font-size: $header-font-size;
+  color: $white;
+}
+div.list-group{
+  display: block;
+  position: relative;
+  width: 100%;
+  margin: 0;
+  border-top: none;
+}
+.list-group-item{
+  //border-bottom-left-radius: 1em;
+  //border-top-left-radius: 1em;
+  height: 5%;
+  background-color: $light-blue;
+  border: $text-color;
+}
+.list-group-item.active{
+  //border-bottom-left-radius: 1em;
+  //border-top-left-radius: 1em;
+  background-color: $main-blue;
+  border: $text-color;
+}
+.list-group-item :hover{
+  background-color: $main-blue;
+}
+.card_1{
+  position: absolute;
+  background-color: $lighter-green;
+  display: block;
+  width: 25%;
+  height: 90%;
+  float: right;
+  border-left: solid 1px $gray;
+}
+.card_1_header{
+  text-align: center;
+  padding-top: 30px;
+  font-size: $header-font-size;
+}
+.card_2{
+  position: absolute;
+  display: block;
+  background-color: $lighter-green;
+  right: 25%;
+  width: 75%;
+  height: 90%;
+  float: right;
+}
+.btn{
+  width: 100%;
+  height: 5%;
+  margin: 8% 0;
+  background-color: $main-green;
+  bottom:0;
+}
+
+//.card-footer{
+//  height: 80%;
+//  bottom: 10px;
+//}

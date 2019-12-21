@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+{% load static %}
+{% load custom %}
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.9/css/uikit.min.css" />
+    <!--<link rel="stylesheet" type="text/css" href="{% static 'css/Base.css' %}">-->
+    <link rel="stylesheet" type="text/css" href="{% static 'css/Base1.css' %}">
+
+    <link rel="icon" type="image/png" href="../static/images/arsh_logo_ICC_icon.ico"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>سامانه ثبت ساعت عرش</title>
+</head>
+
+<body>
+
+<nav class="navbar navbar-default navbar1">
+    <div class="container-fluid">
+        <img src="{% static 'images/arsh-logo.png' %}" class="logo">
+        <div class="navbar-header float-right">
+            <a class="navbar-brand"  href="#" style="color:#fff">سامانه ثبت ساعت عرش</a>
+        </div>
+    </div>
+</nav>
+
+<div class="card text-white bg-info mb-3 card_1">
+    <div class="card-header card_1_header">بسته های کاری</div>
+    <div class="card-body">
+        <div class="list-group"><br><br>
+            {% for pack in packs %}
+                {% if pack.pk == pk %}
+                    <a href="{% url 'boards:work' pack.pk %}" class="list-group-item active">{{ pack.date }}</a><br>
+                {% else %}
+                    <a href="{% url 'boards:work' pack.pk %}" class="list-group-item">{{ pack.date }}</a><br>
+                {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+    <div class="card-footer text-muted ">
+        <form action="{% url 'boards:make_package' %}" method="get">
+            {% csrf_token %}
+            <input class="btn btn1" type="submit" value="ایجاد بسته ی کاری جدید">
+            <!--<button type="button" class="btn btn1">ایجاد بسته ی کاری جدید</button>-->
+        </form>
+    </div>
+</div>
+<!--<div class="panel-heading panel1">بسته های کاری</div>-->
+<!--<div class="panel-body panel1">-->
+    <!--<div class="list-group"><br><br>-->
+    <!--{% for work in packs %}-->
+        <!--<a href="#" class="list-group-item active">{{ work.date }}</a>-->
+    <!--{% endfor %}-->
+    <!--</div>-->
+    <!--<button type="button" class="btn">ایجاد بسته ی کاری جدید</button>-->
+<!--</div>-->
+
+<div class="card text-white bg-info mb-3 card_2 col-lg">
+    <!--<div class="card-header">بسته های کاری</div>-->
+    <div class="card-body">
+        <table class="table table-hover">
+            <thead>
+            <tr>
+                <th style="text-align: center;">عنوان کار</th>
+                <th style="text-align: center;">شروع</th>
+                <th style="text-align: center;">پایان</th>
+                <th style="text-align: center;">مدت زمان</th>
+            </tr>
+            </thead>
+            <tbody style="text-align: center;">
+            {% for work in works%}
+            <tr>
+                <td>{{work.name}}</td>
+                <td>{{work.start.time}}</td>
+                <td>{% if work.end %}
+                        {{work.end.time}}
+                    {% else %}
+                    <form class="form-inline" action="{% url 'boards:done' pk %}" method="post">
+                        {% csrf_token %}
+                        <input class="btn btn-danger btn2" type="submit" value="اتمام">
+                        <!--<button type="button" class="btn btn-danger btn2">اتمام</button>-->
+                    </form>
+                    {% endif %}
+                </td>
+                <td>{{ work.end|dec:work.start }}</td>
+            </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    <div class="card-footer text-muted">
+        <div class="input-group-lg mb-3">
+            {% if pk %}
+                <form class="form-inline" action="{% url 'boards:make_work' pk %}" method="post">
+                    {% csrf_token %}
+                  <div class="input-group-lg mb-3">
+                      <input type="text" class="form-control" style="width:100%;" name="input" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" placeholder="کار جدید را وارد کنید...">
+                  </div>
+                  <!--<button type="submit" class="btn btn-primary mb-2">Confirm identity</button>-->
+                </form>
+            {% endif %}
+        </div>
+    </div>
+</div>
+<!--<div class="panel panel-default">-->
+<!--<div class="panel-body">-->
+    <!--<table class="table table-hover">-->
+        <!--<thead>-->
+        <!--<tr>-->
+            <!--<th style="text-align: center;">عنوان کار</th>-->
+            <!--<th style="text-align: center;">شروع</th>-->
+            <!--<th style="text-align: center;">پایان</th>-->
+            <!--<th style="text-align: center;">مدت زمان</th>-->
+        <!--</tr>-->
+        <!--</thead>-->
+        <!--<tbody style="text-align: center;">-->
+        <!--{% for work in works.all%}-->
+        <!--<tr>-->
+            <!--<td>{{work.name}}</td>-->
+            <!--<td>{{work.start}}</td>-->
+            <!--<td>{{work.end}}</td>-->
+            <!--<td>...</td>-->
+        <!--</tr>-->
+        <!--{% endfor %}-->
+        <!--</tbody>-->
+    <!--</table>-->
+    <!--&lt;!&ndash;<div class="input-custom">&ndash;&gt;-->
+    <!--<input type="text" required class="input1" placeholder="کار جدید را وارد کنید..." >-->
+    <!--&lt;!&ndash;</div>&ndash;&gt;-->
+<!--</div>-->
+<!--</div>-->
+</body>
+</html>

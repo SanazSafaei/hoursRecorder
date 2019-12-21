@@ -1,0 +1,92 @@
+@font-face {
+  font-family: "BKoodak";
+  src: url("static/font/BKoodakBold.eot?") format("eot"), url("static/font/BKoodakBold.ttf") format("truetype"), url("static/font/BKoodakBold.woff") format("woff"); }
+@font-face {
+  font-family: "BYekan";
+  src: url("static/font/BYekan.eot?") format("eot"), url("static/font/BYekan.ttf") format("truetype"), url("static/font/BYekan.woff") format("woff"); }
+body {
+  font: 100% BKoodak, Byekan, sans-serif;
+  color: rgba(0, 0, 0, 0.83);
+  direction: rtl;
+  font-size: 18px; }
+
+.logo {
+  height: 75px;
+  width: 75px;
+  float: left;
+  display: block; }
+
+.float-right {
+  float: right; }
+
+.float-left {
+  float: left; }
+
+.navbar1 {
+  height: 20%;
+  border: none;
+  padding-top: 20px;
+  margin: 0;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+  background-color: #0B2343; }
+
+a.navbar-brand {
+  font-size: 28px;
+  color: #fff; }
+
+div.list-group {
+  display: block;
+  position: relative;
+  width: 100%;
+  margin: 0;
+  border-top: none; }
+
+.list-group-item {
+  height: 5%;
+  background-color: #7E94AF;
+  border: rgba(0, 0, 0, 0.83); }
+
+.list-group-item.active {
+  background-color: #4e5b73;
+  border: rgba(0, 0, 0, 0.83); }
+
+.list-group-item :hover {
+  background-color: #4e5b73; }
+
+.card_1 {
+  position: absolute;
+  background-color: rgba(226, 255, 230, 0.92);
+  display: block;
+  width: 25%;
+  height: 90%;
+  float: right;
+  border-left: solid 1px #888888; }
+
+.card_1_header {
+  text-align: center;
+  padding-top: 30px;
+  font-size: 28px; }
+
+.card_2 {
+  position: absolute;
+  display: block;
+  background-color: rgba(226, 255, 230, 0.92);
+  right: 25%;
+  width: 75%;
+  height: 90%;
+  float: right; }
+
+.btn1 {
+  width: 100%;
+  height: 5%;
+  margin: 8% 0;
+  background-color: #c2ca38;
+  bottom: 0; }
+
+.btn2 {
+  width: 50%;
+  height: 50%;
+  }
+
+/*# sourceMappingURL=Base1.css.map */

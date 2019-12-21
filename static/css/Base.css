@@ -1,0 +1,112 @@
+@font-face {
+  font-family: "BKoodak";
+  src: url("static/font/BKoodakBold.eot?") format("eot"), url("static/font/BKoodakBold.ttf") format("truetype"), url("static/font/BKoodakBold.woff") format("woff"); }
+@font-face {
+  font-family: "BYekan";
+  src: url("static/font/BYekan.eot?") format("eot"), url("static/font/BYekan.ttf") format("truetype"), url("static/font/BYekan.woff") format("woff"); }
+body {
+  font: 100% BKoodak, Byekan, sans-serif;
+  color: rgba(0, 0, 0, 0.83);
+  direction: rtl;
+  font-size: 18px; }
+
+.logo {
+  height: 62px;
+  width: 62px;
+  float: left;
+  display: block; }
+
+.float-right {
+  float: right; }
+
+.float-left {
+  float: left; }
+
+.navbar1 {
+  height: 70px;
+  border: none;
+  margin: 0;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+  background-color: #02562B; }
+
+a.navbar-brand {
+  font-size: 28px;
+  color: #fff; }
+
+div.list-group {
+  display: block;
+  position: relative;
+  width: 100%;
+  margin: 0;
+  border-top: none; }
+
+div.panel-heading.panel1 {
+  background: rgba(226, 255, 230, 0.92);
+  float: right;
+  width: 25%;
+  height: 60px;
+  text-align: center; }
+
+div.panel-body.panel1 {
+  position: absolute;
+  float: right;
+  top: 20%;
+  background: #02562B;
+  padding: 0;
+  width: 25%;
+  height: 80%; }
+
+div.panel.panel-default {
+  position: absolute;
+  padding: 0;
+  float: left;
+  right: 25%;
+  background: rgba(226, 255, 230, 0.92);
+  width: 75%;
+  height: 100%; }
+
+.list-group-item.active {
+  background-color: #54D995;
+  border: rgba(0, 0, 0, 0.83); }
+
+.list-group-item.active:hover {
+  background-color: #0C9650; }
+
+.btn {
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 10%;
+  margin: 8% 0;
+  background-color: #FF693A;
+  bottom: 0; }
+
+table.table.table-hover {
+  margin: 0;
+  padding: 0; }
+
+.table.table-hover thead {
+  color: #fff;
+  text-align: center;
+  background-color: #02562B;
+  margin: 0;
+  height: 60px;
+  padding: 0;
+  left: 20px; }
+
+thead.tr.th {
+  padding: 0 -10px;
+  text-align: center; }
+
+.input1 {
+  display: block;
+  position: absolute;
+  width: 95%;
+  margin: 8% 5px;
+  bottom: 20px;
+  padding: 8px;
+  background: rgba(214, 64, 17, 0.2);
+  border: 0 solid #dbdbdb; }
+
+/*# sourceMappingURL=Base.css.map */
